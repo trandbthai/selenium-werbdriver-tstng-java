@@ -27,7 +27,6 @@ public class Topic_10_Alert {
 		driver.manage().window().maximize();
 	}
 
-	
 	public void TC_01_Accept_Alert() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 		
@@ -53,6 +52,7 @@ public class Topic_10_Alert {
 		
 		driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")).click();
 		
+		// Cho sau do switch vao => nen dung hon
 		alert = explicitWait.until(ExpectedConditions.alertIsPresent());
 		
 		//Verify

@@ -22,7 +22,7 @@ public class Topic_11_User_Interaction_Part_I {
 	@BeforeClass
 	public void beforeClass() {
 		//driver = new FirefoxDriver();
-		System.setProperty("webdriver.gecko.driver", ". /browserDriver/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "./browserDriver/geckodriver");
 		driver = new FirefoxDriver();
 		
 		action = new Actions(driver);
@@ -43,10 +43,11 @@ public class Topic_11_User_Interaction_Part_I {
 		// div[@class='ui-tooltip-content']
 	}
 	
-
+	@Test
 	public void TC_02_Hover_Mouse() {
 		driver.get("https://www.myntra.com/");
 		action.moveToElement(driver.findElement(By.xpath("//a[@class='desktop-main' and text()='Kids']"))).perform();
+		sleepInSeconds(3);
 		driver.findElement(By.xpath("//a[text()='Home & Bath']")).click();
 		Assert.assertEquals(driver.getCurrentUrl(), "https://www.myntra.com/kids-home-bath");
 		
@@ -64,7 +65,7 @@ public class Topic_11_User_Interaction_Part_I {
 		Assert.assertTrue(driver.findElement(By.xpath("//main[@id='maincontent']//a[text()='Bia']")).isDisplayed());
 	}
 
-	
+
 	public void TC_04_Click_And_Hold() {
 		driver.get("https://jqueryui.com/resources/demos/selectable/display-grid.html");
 
